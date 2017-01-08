@@ -1,12 +1,18 @@
-<!-- <% if user_signed_in? %> -->
-<!-- <% else %> -->
-<!-- <% end %> -->
 
 
-<div class="wrapper">
-  <h1>Stopwatch</h1>
-  <p><span id="seconds">00</span>:<span id="tens">00</span></p>
-  <button id="button-start">Start</button>
-  <button id="button-stop">Stop</button>
-  <button id="button-reset">Reset</button>
+
+
+<% if user_signed_in? %>
+<div class="container">
+	<h1 id="output">00 : 00 : 00</h1>
+	<div id="controls">
+
+		<button id="pause" class="button btn btn-danger" onclick="pause()"><i class="fa fa-stop fa-2x" aria-hidden="true">Stop</i></button>
+		<button id="start" class="button btn btn-success" onclick="start()"><i class="fa fa-play fa-2x" aria-hidden="true">Start</i></button>
+		<button id="reset" class="button btn btn-warning" onclick="reset()"><i class="fa fa-repeat fa-2x" aria-hidden="true">Save</i></button>
+
+	</div>
 </div>
+<% else %>
+  <h1>Sign in to start tracking your projects</h1>
+<% end %>

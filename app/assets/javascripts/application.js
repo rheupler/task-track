@@ -15,63 +15,49 @@
 //= require turbolinks
 //= require_tree .
 
-window.onload = function () {
 
-  var seconds = 00;
-  var tens = 00;
-  var appendTens = document.getElementById("tens")
-  var appendSeconds = document.getElementById("seconds")
-  var buttonStart = document.getElementById('button-start');
-  var buttonStop = document.getElementById('button-stop');
-  var buttonReset = document.getElementById('button-reset');
-  var Interval ;
+var running = 0;
+var time = 0;
+var startButton = document.getElementById('start');
+// var output = document.getElementById('output');
 
-  buttonStart.onclick = function() {
-
-     clearInterval(Interval);
-     Interval = setInterval(startTimer, 10);
+function start() {
+  if (running == 0) {
+    running = 1;
+    increment();
   }
+}
 
-    buttonStop.onclick = function() {
-       clearInterval(Interval);
+function pause() {
+  running = 0;
+}
+
+function reset() {
+  running = 0;
+  time = 0;
+  document.querySelector('#output').innerText = '00 : 00 : 00';
+}
+
+function increment() {
+  if (running == 1) {
+    setTimeout(function() {
+      time++;
+      var mins = Math.floor(time / 10 / 60);
+      var secs = Math.floor(time / 10 % 60);
+      var hours = Math.floor(time / 10 / 60 / 60);
+
+      if (mins < 10) {
+        mins = '0' + mins;
+      }
+      if (secs < 10) {
+        secs = '0' + secs;
+      }
+      if (hours < 10) {
+        hours = '0' + hours;
+      }
+
+      document.querySelector('#output').innerHTML = hours + ' : ' + mins + ' : ' + secs;
+      increment();
+    }, 100)
   }
-
-
-  buttonReset.onclick = function() {
-     clearInterval(Interval);
-    tens = "00";
-  	seconds = "00";
-    appendTens.innerHTML = tens;
-  	appendSeconds.innerHTML = seconds;
-  }
-
-
-
-  function startTimer () {
-    tens++;
-
-    if(tens < 9){
-      appendTens.innerHTML = "0" + tens;
-    }
-
-    if (tens > 9){
-      appendTens.innerHTML = tens;
-
-    }
-
-    if (tens > 99) {
-      console.log("seconds");
-      seconds++;
-      appendSeconds.innerHTML = "0" + seconds;
-      tens = 0;
-      appendTens.innerHTML = "0" + 0;
-    }
-
-    if (seconds > 9){
-      appendSeconds.innerHTML = seconds;
-    }
-
-  }
-
-
 }
