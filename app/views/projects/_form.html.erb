@@ -1,0 +1,6 @@
+<%= form_for @project do |f| %>
+  <%= f.label "Name your new project" %>
+  <%= f.text_field :title, class: 'form-control', autofocus: true, placeholder: 'Title' %>
+  <%= f.text_field :description, class: 'form-control', autofocus: true, placeholder: 'Description' %>
+  <button type="submit" class="btn btn-success">Submit</button>
+<% end %>
