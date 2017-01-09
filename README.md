@@ -1,6 +1,4 @@
-<snippet>
-  <content><![CDATA[
-# ${1:Better Every Day}
+## Better Every Day
 
 Project that allows you to make goals and track time spent on each of those goals. Will also allow you to set a number of hours that you wish to spend on a goal and alert you when you've reached the desired time.
 
