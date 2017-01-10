@@ -5,9 +5,9 @@
 		<h1 id="output">00 : 00 : 00</h1>
 		<div id="controls">
 
-			<button id="pause" class="button btn btn-danger" onclick="pause()"><i class="fa fa-stop fa-2x" aria-hidden="true">Stop</i></button>
-			<button id="start" class="button btn btn-success" onclick="start()"><i class="fa fa-play fa-2x" aria-hidden="true">Start</i></button>
-			<button id="reset" class="button btn btn-warning" onclick="reset()"><i class="fa fa-repeat fa-2x" aria-hidden="true">Save</i></button>
+			<button id="pause" class="button btn btn-danger" onclick="pause()"><i aria-hidden="true">Stop</i></button>
+			<button id="start" class="button btn btn-success" onclick="start()"><i aria-hidden="true">Start</i></button>
+			<%= link_to ('<button id="reset" class="button btn btn-warning" onclick="reset()"><i aria-hidden="true">Save</i></button>').html_safe, project_path(project), :method put %>
 
 		</div>
 	  <h1>Total time spent on project:</h1>
