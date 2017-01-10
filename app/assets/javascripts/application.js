@@ -56,8 +56,16 @@ function increment() {
         hours = '0' + hours;
       }
 
-      document.querySelector('#output').innerHTML = hours + ' : ' + mins + ' : ' + secs;
+      document.querySelector('#output').innerHTML = hours + ':' + mins + ':' + secs;
       increment();
     }, 100)
   }
+}
+
+function getSeconds() {
+  var hms = $('#output');
+  var a = hms.split(':')
+  var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
+
+  console.log(seconds);
 }
