@@ -15,9 +15,13 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def update
+    
+  end
+
   private
   def project_params
-    params.require(:project).permit(:title, :description)
+    params.require(:project).permit(:title, :description, :goal_time)
   end
 
 end
