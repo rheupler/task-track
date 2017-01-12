@@ -2,20 +2,12 @@
 
 	<%= link_to 'Add new project', new_project_path %>
 	<% if user_signed_in? %>
-		<div class="container">
-			<h1 id="output">00 : 00 : 00</h1>
-			<div id="controls">
-				<button id="pause" class="button btn btn-danger" onclick="pause()"><i aria-hidden="true">Stop</i></button>
-				<button id="start" class="button btn btn-success" onclick="start()"><i aria-hidden="true">Start</i></button>
 
-			</div>
-		  <h1>Total time spent on project:</h1>
-		</div>
 		<% if @projects.any? %>
 			<% @projects.each do |project| %>
 						<h3><%= project.title %></h3>
 						<p><%= project.description %></p>
-						<%= link_to 'Edit', edit_project_path(project.id) %>
+						<%= link_to 'Show', project_path(project.id) %>
 				<% end %>
 			<% else %>
 				<h3>You have no projects :(</h3>

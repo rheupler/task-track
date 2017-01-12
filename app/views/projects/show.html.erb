@@ -1,1 +1,13 @@
 <h1>Hi</h1>
+
+<div class="container">
+  <h1><%= @project.title %></h1>
+  <h1><%= @project.description %></h1>
+  <h1 id="output">00 : 00 : 00</h1>
+  <div id="controls">
+    <button id="pause" class="button btn btn-danger" onclick="pause()"><i aria-hidden="true">Stop</i></button>
+    <button id="start" class="button btn btn-success" onclick="start()"><i aria-hidden="true">Start</i></button>
+
+  </div>
+  <h1>Total time spent on project:</h1>
+</div>
