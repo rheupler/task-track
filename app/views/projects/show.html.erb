@@ -8,10 +8,10 @@
   <div id="controls">
     <button id="pause" class="button btn btn-danger" onclick="pause()"><i aria-hidden="true">Stop</i></button>
     <button id="start" class="button btn btn-success" onclick="start()"><i aria-hidden="true">Start</i></button>
+    <%= link_to '<button type="button">New Post</button>'.html_safe, new_project_session_path %>
 
   </div>
   <h1>Total time spent on project:</h1>
   <%= @session_start %>
 
-  <%= render 'form2' %>
 </div>

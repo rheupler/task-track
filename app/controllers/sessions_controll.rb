@@ -15,7 +15,6 @@ class SessionsController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @session = @project.sessions.new(session_params)
-    @session.user_id=current_user.id if current_user
     if @session.save
       flash[:notice] = "Session added!"
       redirect_to project_path(@project)
