@@ -3,6 +3,7 @@
 <div class="container">
   <h1><%= @project.title %></h1>
   <h1><%= @project.description %></h1>
+  <h1><%= @project.goal_time %></h1>
   <h1 id="output">00 : 00 : 00</h1>
   <div id="controls">
     <button id="pause" class="button btn btn-danger" onclick="pause()"><i aria-hidden="true">Stop</i></button>
@@ -10,4 +11,7 @@
 
   </div>
   <h1>Total time spent on project:</h1>
+  <%= @session_start %>
+
+  <%= render 'form2' %>
 </div>

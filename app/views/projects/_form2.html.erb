@@ -1,0 +1,6 @@
+<h1>test</h1>
+<%= form_for [@project, @session] do |f| %>
+  <%= f.hidden_field :start_time, :value => Time.now() %>
+  <br>
+  <button type="submit" class="btn btn-info">Start session!</button>
+<% end %>

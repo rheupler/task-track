@@ -6,6 +6,7 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.create(project_params)
+    @session = @project.sessions.new(session_params)
     @project.user_id=current_user.id if current_user
     if @project.save
       flash[:notice] = "Project added!"
@@ -27,6 +28,7 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    @session = Session.new(session_params)
   end
 
   def edit
@@ -35,6 +37,10 @@ class ProjectsController < ApplicationController
   private
   def project_params
     params.require(:project).permit(:title, :description, :goal_time)
+  end
+
+  def session_params
+    params.require(:session).permit(:start_time);
   end
 
 end
